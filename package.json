@@ -3,7 +3,11 @@
   "version": "0.0.1",
   "description": "Steach dev stub server",
   "dependencies": {
+    "body-parser": "^1.15.2",
+    "cookie-parser": "^1.4.3",
     "express": "^4.13.4",
-    "mysql": "^2.10.2"
+    "morgan": "^1.7.0",
+    "mysql": "^2.10.2",
+    "path": "^0.12.7"
   }
 }
