@@ -1,7 +1,7 @@
 {
   "name": "Steach-server",
   "version": "0.0.1",
-  "description": "Steach dev stub server",
+  "description": "slow_book dev stub server",
   "dependencies": {
     "body-parser": "^1.15.2",
     "cookie-parser": "^1.4.3",
