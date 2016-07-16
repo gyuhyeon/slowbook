@@ -61,8 +61,8 @@
 									<li><input type="button" value="Tap Harder" class="special" onclick="undressahri()"/></li>
 								</ul>
 							</div>
-							<img id='nakedahri' src ="http://i.wgirlz.us/t5VXJ0X.jpg" style="opacity:0; width:530px">
-							<img id='ahri' src ="http://lolart.ucoz.com/_ph/10/236499548.jpg" style="width:530px; position:relative; top:-800px;">
+							<!--<img id='nakedahri' src ="http://i.wgirlz.us/t5VXJ0X.jpg" style="opacity:0; width:50%; position:relative; top:0px">-->
+							<div style="width:80%; background-size:50%; background-image:url('http://i.wgirlz.us/t5VXJ0X.jpg'); background-repeat:no-repeat"><img id='ahri' src ="http://lolart.ucoz.com/_ph/10/236499548.jpg" style="width:50%"></div>
 							
 
 						</section>
@@ -114,9 +114,15 @@
 			<script type="text/javascript">
 			document.getElementById('ahri').style.opacity=1;
 			function undressahri(){
-				document.getElementById('nakedahri').style.opacity=1;
-				document.getElementById('ahri').style.opacity-=0.05;
+				document.getElementById('ahri').style.opacity-=0.02;
 			}
+			/*
+			setInterval(function(){
+				if(document.getElementById('ahri').style.opacity<0.9){
+					document.getElementById('ahri').style.opacity=float(document.getElementById('ahri').style.opacity)+0.15;
+				}
+			}, 100);
+*/
 			</script>
 
 	</body>
