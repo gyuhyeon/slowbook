@@ -18,7 +18,7 @@
 
 		<!-- Header -->
 			<div id="header">
-				<a class="logo" href="/"><strong><%=testtitle%></strong> by Kwon-Lee Brothers</a>
+				<a class="logo" href="/"><strong><%=testtitle%></strong> :3</a>
 				<nav id="nav">
 					<ul>
 						<li><a href="/">Home</a></li>
@@ -34,10 +34,10 @@
 										<li><a href="http://cdn.akamai.steamstatic.com/steam/apps/334660/ss_8d26d27426fdfe46b252cb21bcdcbde64c44fb3d.600x338.jpg?t=1447365350">?</a></li>
 										<li><a href="http://static.zerochan.net/Ahri.full.1588151.jpg">?!</a></li>
 										<li><a href="https://blogjob.com/oneangrygamer/files/2016/02/Image11-1-585x300.jpg">?!?</a></li>
-										<li><a href="/ahri">!!!!?!!?!</a></li>
+										<li class="active"><a href="/ahri">!!!!?!!?!</a></li>
 									</ul>
 								</li>
-								<li class="active"><a href="/readertest">Book Reader Test</a></li>
+								<li><a href="/readertest">Book Reader Test</a></li>
 							</ul>
 						</li>
 						<li><a href="demo">Demo</a></li>
@@ -50,40 +50,24 @@
 
 				<!-- Header -->
 					<header>
-						<h1>PDF Reader Test</h1>
+						<h1>Easter egg</h1>
 					</header>
 
 				<!-- Content -->
 						<section>
-							<h2>Book Reader Test</h2>
-							<form method="post" action="readertest/submitpref">
-								
-								<div class="row uniform">
-									<div class="12u$">
-										<label for="book-list">책 목록</label>
-										<div class="select-wrapper">
-											<select name="booklist" id="book-list">
-												<option value="">-</option>
-												<%- booklist %>
-											</select>
-										</div>
-									</div>
+							<h2>&nbsp;Ahri :3</h2>
+							<img id='nakedahri' src ="http://i.wgirlz.us/t5VXJ0X.jpg" style="opacity:0; width:50%">
+							<img id='ahri' src ="http://lolart.ucoz.com/_ph/10/236499548.jpg" style="width:50%; position:relative; top:-800px;">
+							<div class="12u$">
+								<ul class="actions">
+									<li><input style="position:relative; top:-800px;" type="button" value="Send Message" class="special" onclick="undressahri()"/></li>
+								</ul>
+							</div>
 
-									<div class="12u$">
-										<ul class="actions">
-											<li><input type="submit" value="책 보기" class="special" /></li>
-											<li><input type="reset" value="Reset" /></li>
-										</ul>
-									</div>
-								</div>
-							</form>
 						</section>
 
-						<section id="pdf" class="wrapper special">
-							<h2>PDF</h2>
-							<embed src=<%=bookurl%> style="width:100%; height:1300px">
-						</section>
 
+					</section>
 
 			</div>
 
@@ -126,6 +110,13 @@
 			<script src="assets/js/util.js"></script>
 			<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
 			<script src="assets/js/main.js"></script>
+			<script type="text/javascript">
+			document.getElementById('ahri').style.opacity=1;
+			function undressahri(){
+				document.getElementById('nakedahri').style.opacity=1;
+				document.getElementById('ahri').style.opacity-=0.05;
+			}
+			</script>
 
 	</body>
 </html>

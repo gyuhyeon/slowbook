@@ -8,6 +8,7 @@ var cookieParser = require('cookie-parser');
 var index = require('./routes/index');
 var demo = require('./routes/demo');
 var readertest = require('./routes/readertest');
+var ahri = require('./routes/ahri');
 
 var app = express();
 
@@ -27,6 +28,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', index);
 app.use('/demo', demo);
 app.use('/readertest', readertest);
+app.use('/ahri', ahri);
 
 //requests
 //app.use('/submitpref', submitpref);
