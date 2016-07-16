@@ -37,10 +37,10 @@
 										<li><a href="http://lolart.ucoz.com/_ph/10/236499548.jpg">!!!!?!!?!</a></li>
 									</ul>
 								</li>
-								<li><a href="/readertest">Book Reader Test</a></li>
+								<li class="active"><a href="/readertest">Book Reader Test</a></li>
 							</ul>
 						</li>
-						<li class="active"><a href="demo">Demo</a></li>
+						<li><a href="demo">Demo</a></li>
 					</ul>
 				</nav>
 			</div>
@@ -50,43 +50,28 @@
 
 				<!-- Header -->
 					<header>
-						<h1>Demo</h1>
+						<h1>PDF Reader Test</h1>
 					</header>
 
 				<!-- Content -->
 						<section>
-							<h2>성별</h2>
-							<form method="post" action="demo/submitpref">
-								<div class="4u 12u$(small)">
-									<input type="radio" id="gender-male" name="gender" value="male">
-									<label for="gender-male">남성</label>
-								</div>
-								<div class="4u 12u$(small)">
-									<input type="radio" id="gender-female" name="gender" value="female">
-									<label for="gender-female">여성</label>
-								</div>
-								<br>
+							<h2>Book Reader Test</h2>
+							<form method="post" action="readertest/submitpref">
+								
 								<div class="row uniform">
-									<div class="6u 12u$(xsmall)">
-										<label for="demo-name">나이</label>
-										<input type="text" name="age" id="age" value="" />
-									</div>
-									<br>
 									<div class="12u$">
-										<label for="demo-category">추천받을 장르</label>
+										<label for="book-list">책 목록</label>
 										<div class="select-wrapper">
-											<select name="bookgenre" id="book-genre">
+											<select name="booklist" id="book-list">
 												<option value="">-</option>
-												<option value="fiction">소설</option>
-												<option value="technical">비문학</option>
-												<option value="poem">시집</option>
+												<%- booklist %>
 											</select>
 										</div>
 									</div>
 
 									<div class="12u$">
 										<ul class="actions">
-											<li><input type="submit" value="Send Message" class="special" /></li>
+											<li><input type="submit" value="책 보기" class="special" /></li>
 											<li><input type="reset" value="Reset" /></li>
 										</ul>
 									</div>
@@ -94,8 +79,11 @@
 							</form>
 						</section>
 
+						<section id="pdf" class="wrapper special">
+							<h2>PDF</h2>
+							<embed src=<%=bookurl%> style="width:100%; height:1300px">
+						</section>
 
-					</section>
 
 			</div>
 

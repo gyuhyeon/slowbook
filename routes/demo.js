@@ -3,7 +3,7 @@ var mysql = require('mysql');
 var router = express.Router();
 
 var mysqlConfig = {
-	'host' : 'slowbookdb.c0tygauz7qlt.ap-northeast-2.rds.amazonaws.com:3306',
+	'host' : 'slowbookdb.c0tygauz7qlt.ap-northeast-2.rds.amazonaws.com',
 	'user' : 'slowbook', 'password' : 'godwjd1212', 'database' : 'slowbookdb',
 }
 var connection = mysql.createConnection(mysqlConfig);
