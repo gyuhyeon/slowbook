@@ -25,7 +25,13 @@ router.get('/', function(req, res, next) {
 				list+='<option value="'+0+'">'+"Sorry, our servers aren't reachable at the moment.</option>";
 			}
 			//if there's any selected book, display as pdf.
-			res.render('readertest', { testtitle:'느림과 여유', booklist:list, bookurl:req.cookies.selectedbook});
+			if(typeof req.cookies.selectedbook == 'undefined'){
+				res.render('readertest', { testtitle:'느림과 여유', booklist:list, bookurl:''});
+			}
+			else{
+				res.render('readertest', { testtitle:'느림과 여유', booklist:list, bookurl:req.cookies.selectedbook});
+			}
+			console.log(req.cookies.selectedbook);
 		});
 		//can't render outside, because variable list is wiped.
 });
