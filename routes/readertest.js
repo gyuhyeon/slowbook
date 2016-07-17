@@ -43,7 +43,7 @@ router.post('/submitpref', function(req, res, next){
 			if(error==null){
 				if(cursor.length>0){
 					//set cookie. Is this really the only way to 'refresh' the page while retaining information???!
-					res.cookie('selectedbook', cursor[0].bookurl, {maxAge: 60*1000});
+					res.cookie('selectedbook', cursor[0].bookurl, {maxAge: 60*1000*24});
 					res.redirect('/readertest');
 				}
 				else{
