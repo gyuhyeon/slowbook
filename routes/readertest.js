@@ -14,7 +14,7 @@ router.get('/', function(req, res, next) {
 	connection.query('SELECT * FROM Booklist',
 		function(error, cursor){
 			var list='';
-			var selectedbookurl='';
+			var selectedbookurl='URLTOFILE';
 			if(error==null){
 				for(var i=0; i<cursor.length; i++){
 					//search for book with selected book('booklist') p_id
