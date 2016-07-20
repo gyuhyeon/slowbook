@@ -16,7 +16,7 @@ router.get('/', function(req, res, next) {
 //submitpref POST
 router.post('/submitpref', function(req, res, next){
 	//res.write('User gender: '+req.body.gender+'\n'+'User age: '+req.body.age+'\n'+'Selected genre: '+req.body.bookgenre);
-	res.redirect('http://xkcd.com')
+	res.redirect('/readertest?booklist=1');
 	res.end();
 });
 
