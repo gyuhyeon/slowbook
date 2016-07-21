@@ -15,9 +15,26 @@ router.get('/', function(req, res, next) {
 
 //submitpref POST
 router.post('/submitpref', function(req, res, next){
-	//res.write('User gender: '+req.body.gender+'\n'+'User age: '+req.body.age+'\n'+'Selected genre: '+req.body.bookgenre);
-	res.redirect('/readertest?booklist=1');
-	res.end();
+	//we really need to deal with multiple query problems / query result scope problems.... Maybe we just can't. They're asynchronous. Fuck.
+	connection.query('SELECT * FROM Booklist WHERE ABS(?-rec_age)<=10',
+		[req.body.age], function(error, cursor){
+			var selectedbookname='None';
+			if(error==null){
+				if(cursor.length>0){
+					//randomly select matching books... for now.
+					selectedbookname = cursor[Math.floor(Math.random()*cursor.length)].bookname;
+				}
+				else{
+					console.log('no matching books');
+				}
+			}
+			else{
+				console.log(error);
+			}
+			//not proud of this at all.
+			res.cookie('selectedbookname', selectedbookname, {maxAge: 60*1000*60});
+			res.redirect('/bookreader');
+		});
 });
 
 module.exports = router;

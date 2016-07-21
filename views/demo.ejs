@@ -22,6 +22,7 @@
 				<nav id="nav">
 					<ul>
 						<li><a href="/">Home</a></li>
+						<li class="active"><a href="/demo">Demo</a></li>
 						<li>
 							<a href="#">Tests</a>
 							<ul>
@@ -29,7 +30,7 @@
 								<li><a href="#">Management Only</a></li>
 								<li><a href="#">Notice board</a></li>
 								<li>
-									<a href="#">판도라의 상자</a>
+									<a href="/ahri">판도라의 상자</a>
 									<ul>
 										<li><a href="/ahri">!!!!?!!?!</a></li>
 									</ul>
@@ -37,7 +38,6 @@
 								<li><a href="/readertest">Book Reader Test</a></li>
 							</ul>
 						</li>
-						<li class="active"><a href="/demo">Demo</a></li>
 					</ul>
 				</nav>
 			</div>
@@ -47,13 +47,14 @@
 
 				<!-- Header -->
 					<header>
-						<h1>Demo</h1>
+						<h1>설문지</h1>
 					</header>
 
 				<!-- Content -->
-						<section>
-							<h2>성별</h2>
-							<form method="post" action="demo/submitpref">
+						<section style="padding-left:10px; padding-right:10px; padding-bottom:10px">
+							<p>맞는 책을 찾아드리기 위한 최소한의 간략한 질문만 모았습니다 :)</p>
+							<form name="question" method="post" action="demo/submitpref" onsubmit="return validateForm()">
+								<h3>성별</h3>
 								<div class="4u 12u$(small)">
 									<input type="radio" id="gender-male" name="gender" value="male">
 									<label for="gender-male">남성</label>
@@ -63,20 +64,35 @@
 									<label for="gender-female">여성</label>
 								</div>
 								<br>
+
 								<div class="row uniform">
 									<div class="6u 12u$(xsmall)">
-										<label for="demo-name">나이</label>
+										<h3>나이</h3>
 										<input type="text" name="age" id="age" value="" />
 									</div>
-									<br>
+									
 									<div class="12u$">
-										<label for="demo-category">추천받을 장르</label>
+										<h3>좋아하는 장르</h3>
 										<div class="select-wrapper">
-											<select name="bookgenre" id="book-genre">
+											<select name="genre" id="genre">
 												<option value="">-</option>
 												<option value="fiction">소설</option>
 												<option value="technical">비문학</option>
 												<option value="poem">시집</option>
+											</select>
+										</div>
+									</div>
+
+									<div class="12u$">
+										<h3>오늘 컨디션은 어떠신가요?</h3>
+										<div class="select-wrapper">
+											<select name="condition" id="condition">
+												<option value="">-</option>
+												<option value=5>정말 좋다</option>
+												<option value=4>좋다</option>
+												<option value=3>잘 모르겠다
+												<option value=2>별로다</option>
+												<option value=1>정말 별로다</option></option>
 											</select>
 										</div>
 									</div>
@@ -99,21 +115,21 @@
 		<!-- Footer -->
 			<div id="footer">
 				<h2>Get in touch</h2>
-				<p>We probably won't get back to you.</p>
+				<p>We will get back to you as soon as possible.</p>
 				<ul class="major-icons">
 					<li>
 						<h3 class="icon fa-phone major"><span class="label">Phone</span></h3>
-						<p>010-7248-1535<br>권태형 번호 읎다</p>
+						<p>010-2642-6824<br>010-7248-1535</p>
 					</li>
 					<li>
 						<h3 class="icon fa-map major"><span class="label">Address</span></h3>
-						<p>사무실 하나 차려줘<br />
-						NY, United States (뻥)</p>
+						<p>앉을 수 있는 곳이면<br>
+						어디든 저희 공간입니다.</p>
 					</li>
 					<li>
 						<h3 class="icon fa-envelope major"><span class="label">Email</span></h3>
-						<p><a href="http://xkcd.com">mark3236@naver.com</a>
-						<br><a href="http://xkcd.com">dennisthkwon@gmail.com</a>
+						<p><a href="mailto:dennisthkwon@gmail.com">dennisthkwon@gmail.com</a>
+						<br><a href="mailto:mark3236@naver.com">mark3236@naver.com</a>
 						</p>
 					</li>
 				</ul>
@@ -135,6 +151,20 @@
 			<script src="/assets/js/util.js"></script>
 			<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
 			<script src="/assets/js/main.js"></script>
+
+			<script type="text/javascript">
+			function validateForm(){
+				var a = document.forms["question"]["gender"].value;
+				var b = document.forms["question"]["age"].value;
+				var c = document.forms["question"]["genre"].value;
+				var d = document.forms["question"]["condition"].value;
+				if(a==null||a==""||b==null||b==""||c==null||c==""||d==null||d==""||(!Number.isInteger(parseInt(b)))){
+					alert("정확하게 값을 입력해주세요!");
+					return false;
+				}
+				return true;
+			}
+			</script>
 
 	</body>
 </html>
